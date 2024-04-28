@@ -5,6 +5,7 @@ const itemSchema = require('../schema/itemSchema.js');
 
 // Create
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         const item = new itemSchema({
             text: req.body.text,

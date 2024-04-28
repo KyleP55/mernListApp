@@ -5,9 +5,16 @@ const mongoose = require('mongoose');
 
 const itemRoutes = require('./routes/listRoutes.js');
 
+const FRONTEND_URL = process.env.FRONTEND_URL;
 const DATABASE_URL = process.env.DATABASE_URL;
 
 app.use(express.json());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', FRONTEND_URL);
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    next();
+});
 
 // Routes
 app.use('/items', itemRoutes);
