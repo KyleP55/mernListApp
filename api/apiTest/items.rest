@@ -1,0 +1,33 @@
+//Create 
+POST http://localhost:3001/items/ 
+Content-Type: application/json
+
+{
+    "text": "Some text to test the API/DB Connections"
+}
+###
+
+//Get All
+GET http://localhost:3001/items/getAll/ 
+Content-Type: application/json
+###
+
+//Get One
+GET http://localhost:3001/items/662e930e47f5f67b3a7258ba
+Content-Type: application/json
+
+
+###
+
+//Edit
+PUT http://localhost:3001/items/662e930e47f5f67b3a7258ba
+Content-Type: application/json
+
+{
+    "text": "Updated Test"
+}
+###
+
+//Delete
+DELETE http://localhost:3001/items/662e930e47f5f67b3a7258ba
+Content-Type: application/json
