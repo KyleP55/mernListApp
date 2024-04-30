@@ -1,13 +1,14 @@
 import { useState } from "react";
 import axios from 'axios';
 
-function Form() {
+function Form({ submitted }) {
     const [text, setText] = useState('');
     const [name, setName] = useState('');
     const [error, setError] = useState();
 
     async function onSubmitHandler(e) {
         e.preventDefault();
+        console.log('pressed')
         try {
             const info = {
                 text: text,
@@ -18,22 +19,24 @@ function Form() {
 
             setText('');
             setName('');
-            alert('Uploaded message')
+            alert('Uploaded message');
+            submitted();
         } catch (err) {
             alert('Something went wrong, please try again later');
         }
     }
 
     return (
-        <form>
-            <h1>Create a Message!</h1>
+        <form className='col-lg-4'>
+            <h1 className="removeTopMarg">Post a Message!</h1>
 
             <label>Text:</label>
-            <input
+            <textarea
                 type="text"
                 placeholder='Enter a Message'
                 onChange={(e) => setText(e.target.value)}
                 value={text}
+                className='bigBox'
             />
 
             <label>Name:</label>
