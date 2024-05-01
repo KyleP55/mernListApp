@@ -16,10 +16,11 @@ function HomePage() {
     }, []);
 
     return (<div className='row'>
+        <div className='col-lg-2' />
         <Form submitted={getList} />
-        <div className='col-lg-8 itemContainer'>
+        <div className='col-lg-4 itemContainer'>
             {list && list.map((item) => {
-                return (<div key={item._id} className='col-lg-6 itemCard'>
+                return (<div key={item._id} className='col-lg-12 itemCard'>
                     <p className='messageBox'>{item.text}</p>
                     <div className='signatureDiv'>
                         <h4>{item.owner}</h4>

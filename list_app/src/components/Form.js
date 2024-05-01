@@ -28,9 +28,9 @@ function Form({ submitted }) {
 
     return (
         <form className='col-lg-4'>
-            <h1 className="removeTopMarg">Post a Message!</h1>
+            <h1 className="removeTopMarg center">Post a Message!</h1>
 
-            <label>Text:</label>
+            <label>Message:</label>
             <textarea
                 type="text"
                 placeholder='Enter a Message'
@@ -48,7 +48,11 @@ function Form({ submitted }) {
             />
             <p className='errorMessage'>{error}</p>
 
-            <button onClick={onSubmitHandler} className="button">Create</button>
+            <button onClick={onSubmitHandler} className="button">Post Message</button>
+            <div className='row removePadding'>
+                <button onClick={ } className="button col-lg-6">Log In</button>
+                <button onClick={ } className="button col-lg-6">Create Account</button>
+            </div>
         </form>
     );
 }
