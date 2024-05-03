@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Form from '../components/Form';
 
-function HomePage() {
+function MessageBoardPage() {
     const [list, setList] = useState([]);
 
     async function getList() {
